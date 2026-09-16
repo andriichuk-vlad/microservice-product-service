@@ -8,5 +8,5 @@ public interface ProductService {
     ProductDto saveProduct(ProductRequestDto productRequestDto);
     ProductDto getProductById(Long id);
 
-    ProductDto reduceProductQuantity(Long id, Integer quantity);
+    ProductDto reduceProductQuantity(Long productId, Integer quantity);
 }
