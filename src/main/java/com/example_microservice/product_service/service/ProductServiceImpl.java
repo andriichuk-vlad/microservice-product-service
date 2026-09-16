@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class    ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
@@ -35,8 +35,8 @@ public class    ProductServiceImpl implements ProductService {
 
     @Transactional
     @Override
-    public ProductDto reduceProductQuantity(Long id, Integer quantity) {
-        Product product = getProduct(id);
+    public ProductDto reduceProductQuantity(Long productId, Integer quantity) {
+        Product product = getProduct(productId);
         int decreasedQuantity = product.getStockQuantity() - quantity;
         product.setStockQuantity(decreasedQuantity);
         productRepository.save(product); // can delete
